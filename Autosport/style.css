@@ -1,0 +1,496 @@
+/* Основной фон и стиль */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #2e344b;
+  background-image: url('nwb2ca7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #eaeaea;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Унифицированный стиль кнопки */
+.btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff9800;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+}
+
+/* Переключатель языка */
+#lang-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+#lang-toggle:hover {
+  background-color: #ffae00;
+}
+
+/* Hero секция */
+.hero {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.power-container {
+  display: inline-block;
+  background: rgba(218, 4, 4, 0.144);
+  padding: 12px 28px;
+  border-radius: 14px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 12px rgba(218, 4, 4, 0.548);
+  margin-bottom: 16px;
+}
+
+.power-container h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #ff9800;
+}
+
+.power-subtext {
+  display: block;
+  margin-bottom: 20px;
+  padding: 8px 24px;
+  background: rgba(218, 4, 4, 0.144);
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 12px rgba(218, 4, 4, 0.548);
+}
+
+.power-subtext p {
+  margin: 0;
+  font-size: 18px;
+  color: #ff9800;
+  text-align: center;
+}
+
+/* Центрирование */
+.center-btn {
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* Прозрачный контейнер */
+.glass-container {
+  background: rgba(0, 0, 0, 0.219);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.219);
+}
+
+.center-content {
+  text-align: center;
+}
+
+.center-content p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ABOUT */
+.about {
+  position: relative;
+  padding: 80px 20px;
+  color: rgb(202, 197, 197);
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.041);
+  z-index: -1;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #ff9800;
+  text-align: center;
+}
+
+.about p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 24px;
+  text-align: center;
+}
+
+/* EVENTS */
+.events {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.events .glass-container {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  padding: 40px 25px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+}
+
+.events h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #ff9800;
+}
+
+.events ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.events li {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-left: 4px solid #ff9800;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 0 8px rgba(255, 152, 0, 0.2);
+}
+.countdown-timer {
+  margin-top: 40px;
+  font-size: 20px;
+  color: #ff9800;
+  text-align: center;
+}
+
+#timer {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin-top: 12px;
+  color: #fff;
+}
+
+
+/* DRIVERS */
+.drivers {
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+}
+
+.drivers h2 {
+  font-size: 32px;
+  color: #ff9800;
+  margin-bottom: 40px;
+}
+
+.driver-card {
+  display: inline-block;
+  width: 260px;
+  margin: 20px;
+  background-color: #2a2c38;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.driver-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.driver-card h3 {
+  margin: 15px 0 5px;
+  color: #ff9800;
+  font-size: 20px;
+}
+
+.driver-card p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #ff9800;
+}
+
+/* CONTACT */
+.contact {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact .glass-container {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  padding: 40px 25px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+}
+
+.contact h2 {
+  font-size: 28px;
+  color: #ff9800;
+  margin-bottom: 30px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px 14px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.contact button {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff9800;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.contact button:hover {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+}
+
+
+/* FOOTER */.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.footer-links .btn {
+  min-width: 130px;
+  padding: 10px 18px;
+  font-size: 14px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff9800;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.footer-links .btn:hover {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+}
+
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  max-width: 360px; /* ✅ ограничим ширину */
+}
+
+.socials li {
+  flex: 0 0 auto;
+}
+
+.socials .btn {
+  min-width: 110px;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff9800;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.socials .btn:hover {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+}
+
+/* Добавим отступ к нижней кнопке */
+footer .center-btn {
+  margin-top: 16px;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 15px;
+  }
+
+  .power-container h1 {
+    font-size: 26px;
+  }
+
+  .power-subtext p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .driver-card {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .gallery-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact form {
+    width: 100%;
+  }
+}
+.register-section {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  padding: 40px 25px;
+  margin: 80px auto;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+  text-align: center;
+  color: #ff9800;
+}
+
+.register-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #ff9800;
+}
+
+.register-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.register-section label {
+  font-weight: 500;
+  color: #eaeaea;
+  text-align: left;
+}
+
+.register-section input,
+.register-section select {
+  padding: 12px 14px;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.register-section input:focus,
+.register-section select:focus {
+  border-color: #ff9800;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.register-section button {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff9800;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.register-section button:hover {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+}
+
+
+/* Эффект при наведении на секции */
+section {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
