@@ -9,6 +9,12 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #eaeaea;
+  animation: pulseBG 12s ease-in-out infinite;
+}
+
+@keyframes pulseBG {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.15); }
 }
 
 body::before {
@@ -32,12 +38,21 @@ body::before {
   text-decoration: underline;
   cursor: pointer;
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  user-select: none;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
   background: rgba(255, 152, 0, 0.2);
   color: #ffffff;
   box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+  outline: none;
+}
+
+/* Анимация на кнопках при нажатии */
+.btn:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
 }
 
 /* Переключатель языка */
@@ -54,10 +69,12 @@ body::before {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   z-index: 1000;
   transition: background 0.3s ease;
+  user-select: none;
 }
 
 #lang-toggle:hover {
   background-color: #ffae00;
+  color: #222;
 }
 
 /* Hero секция */
@@ -68,12 +85,18 @@ body::before {
 
 .power-container {
   display: inline-block;
-  background: rgba(218, 4, 4, 0.144);
+  background: rgba(255, 255, 255, 0.08);
   padding: 12px 28px;
   border-radius: 14px;
   backdrop-filter: blur(3px);
   box-shadow: 0 0 12px rgba(218, 4, 4, 0.548);
   margin-bottom: 16px;
+  animation: glowRed 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowRed {
+  from { box-shadow: 0 0 12px rgba(218, 4, 4, 0.5); }
+  to { box-shadow: 0 0 24px rgba(218, 4, 4, 0.9); }
 }
 
 .power-container h1 {
@@ -90,6 +113,7 @@ body::before {
   border-radius: 10px;
   backdrop-filter: blur(3px);
   box-shadow: 0 0 12px rgba(218, 4, 4, 0.548);
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .power-subtext p {
@@ -107,11 +131,18 @@ body::before {
 
 /* Прозрачный контейнер */
 .glass-container {
-  background: rgba(0, 0, 0, 0.219);
+  background-color: rgba(0, 0, 0, 0.041);
   backdrop-filter: blur(6px);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.219);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: glowRed 3s ease-in-out infinite alternate;
+}
+
+.glass-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.4);
 }
 
 .center-content {
@@ -137,6 +168,7 @@ body::before {
   width: 100%; height: 100%;
   background-color: rgba(0, 0, 0, 0.041);
   z-index: -1;
+  
 }
 
 .about h2 {
@@ -168,6 +200,12 @@ body::before {
   max-width: 600px;
   margin: 0 auto;
   box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  animation: glowRed 3s ease-in-out infinite alternate;
+}
+
+.events .glass-container:hover {
+  box-shadow: 0 0 28px rgba(255, 152, 0, 0.5);
 }
 
 .events h2 {
@@ -195,11 +233,14 @@ body::before {
   font-size: 16px;
   box-shadow: 0 0 8px rgba(255, 152, 0, 0.2);
 }
+
+/* Countdown timer */
 .countdown-timer {
   margin-top: 40px;
   font-size: 20px;
   color: #ff9800;
   text-align: center;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 #timer {
@@ -208,20 +249,24 @@ body::before {
   letter-spacing: 1px;
   margin-top: 12px;
   color: #fff;
+  animation: glowRed 3s ease-in-out infinite alternate;
+  
 }
-
 
 /* DRIVERS */
 .drivers {
   padding: 80px 20px;
   text-align: center;
   color: white;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .drivers h2 {
   font-size: 32px;
   color: #ff9800;
   margin-bottom: 40px;
+  text-align: center;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .driver-card {
@@ -233,18 +278,29 @@ body::before {
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
   text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: glowRed 3s ease-in-out infinite alternate;
+}
+
+.driver-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 152, 0, 0.7);
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .driver-card img {
   width: 100%;
   height: 170px;
   object-fit: cover;
+  user-select: none;
 }
 
 .driver-card h3 {
   margin: 15px 0 5px;
   color: #ff9800;
   font-size: 20px;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .driver-card p {
@@ -257,6 +313,7 @@ body::before {
 .contact {
   padding: 80px 20px;
   text-align: center;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .contact .glass-container {
@@ -267,18 +324,27 @@ body::before {
   max-width: 600px;
   margin: 0 auto;
   box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  animation: glowRed 3s ease-in-out infinite alternate;
+}
+
+.contact .glass-container:hover {
+  box-shadow: 0 0 28px rgba(255, 152, 0, 0.5);
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .contact h2 {
   font-size: 28px;
   color: #ff9800;
   margin-bottom: 30px;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .contact form {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .contact input,
@@ -289,8 +355,19 @@ body::before {
   border-radius: 8px;
   color: #fff;
   font-size: 16px;
+  transition: border-color 0.3s ease;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #ff9800;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  
+}
+
+/* BUTTONS в CONTACT */
 .contact button {
   background: rgba(255, 255, 255, 0.08);
   color: #ff9800;
@@ -302,6 +379,7 @@ body::before {
   text-decoration: underline;
   cursor: pointer;
   transition: background 0.3s, box-shadow 0.3s;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .contact button:hover {
@@ -310,8 +388,8 @@ body::before {
   box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
 }
 
-
-/* FOOTER */.footer-links {
+/* FOOTER */
+.footer-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -339,7 +417,6 @@ body::before {
   box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
 }
 
-
 .socials {
   display: flex;
   justify-content: center;
@@ -348,7 +425,7 @@ body::before {
   padding: 0;
   margin: 20px auto;
   flex-wrap: wrap;
-  max-width: 360px; /* ✅ ограничим ширину */
+  max-width: 360px; /* ограничение ширины */
 }
 
 .socials li {
@@ -375,11 +452,10 @@ body::before {
   box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
 }
 
-/* Добавим отступ к нижней кнопке */
+/* Отступ к нижней кнопке */
 footer .center-btn {
   margin-top: 16px;
 }
-
 
 /* Адаптивность */
 @media (max-width: 768px) {
@@ -414,6 +490,8 @@ footer .center-btn {
     width: 100%;
   }
 }
+
+/* Register Section */
 .register-section {
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(6px);
@@ -424,6 +502,7 @@ footer .center-btn {
   box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
   text-align: center;
   color: #ff9800;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .register-section h2 {
@@ -431,18 +510,21 @@ footer .center-btn {
   margin-bottom: 30px;
   text-transform: uppercase;
   color: #ff9800;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .register-section form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .register-section label {
   font-weight: 500;
   color: #eaeaea;
   text-align: left;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .register-section input,
@@ -454,6 +536,7 @@ footer .center-btn {
   border-radius: 8px;
   font-size: 16px;
   transition: border-color 0.3s ease;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .register-section input:focus,
@@ -461,6 +544,7 @@ footer .center-btn {
   border-color: #ff9800;
   outline: none;
   background-color: rgba(255, 255, 255, 0.1);
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .register-section button {
@@ -474,6 +558,7 @@ footer .center-btn {
   text-decoration: underline;
   cursor: pointer;
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
 
 .register-section button:hover {
@@ -482,15 +567,24 @@ footer .center-btn {
   box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
 }
 
-
 /* Эффект при наведении на секции */
 section {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+/* Иконки */
 .icon {
   width: 20px;
   height: 20px;
   vertical-align: middle;
   margin-right: 6px;
+  filter: drop-shadow(0 0 1px #ff9800);
+  transition: filter 0.3s ease;
+  animation: glowRed 3s ease-in-out infinite alternate;
+}
+
+.footer-links .btn:hover .icon,
+.socials .btn:hover .icon {
+  filter: drop-shadow(0 0 4px #ff9800);
+  animation: glowRed 3s ease-in-out infinite alternate;
 }
