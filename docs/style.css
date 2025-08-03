@@ -35,7 +35,7 @@ body::before {
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none; /* Вот это убирает подчёркивание */
   cursor: pointer;
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
   user-select: none;
